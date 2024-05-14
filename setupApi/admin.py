@@ -5,9 +5,9 @@ class CategoriaAdmin(admin.ModelAdmin):
     list_display = ['nome', 'descricao']
 
 class ProdutoAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'descricao','preco', 'quantidade', 'categoria']
-    list_filter = ['categoria']
-    search_fields = ['nome', 'descricao']
+    list_display = ['nome', 'descricao','preco', 'categoria', 'codigo']
+    list_filter = ['categoria__nome']
+    search_fields = ['nome', 'descricao', 'codigo']
 
 class EntradaAdmin(admin.ModelAdmin):
     list_display = ['produto', 'quantidade', 'data_entrada']

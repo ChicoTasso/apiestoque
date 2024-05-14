@@ -23,8 +23,8 @@ class Produto(models.Model):
     descricao = models.TextField('Descrição', max_length=300)
     preco = models.FloatField('Preço')
     estoque = models.SmallIntegerField('Quantidade em Estoque', blank=True)
-    codigo = models.BigIntegerField('Código de Barras', max_length=10)
-    categoria = models.ForeignKey(Categoria,'Categoria', on_delete=models.CASCADE)
+    codigo = models.BigIntegerField('Código de Barras')
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.nome} - {self.codigo}'
@@ -39,7 +39,7 @@ class Produto(models.Model):
 
 class Entrada(models.Model):
 
-    produto = models.ForeignKey(Produto, 'Produto')
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     quantidade = models.SmallIntegerField('Quantidade', )
     data_entrada = models.DateTimeField('Data de Entrada', auto_now_add=True)
 
@@ -54,7 +54,7 @@ class Entrada(models.Model):
 class Saida(models.Model):
 
     
-    produto = models.ForeignKey(Produto, 'Produto')
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     quantidade = models.SmallIntegerField('Quantidade', )
     data_saida = models.DateTimeField('Data de Saída', auto_now_add=True)
 

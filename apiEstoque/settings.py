@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "corsheaders",
     'rest_framework',
-    'core',
+    'setupApi',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'apiEstoque.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'estoquebd',
+        'USER':'estoqueuser',
+        'PASSWORD':'senha123',
+        'HOST':'localhost',
+        'PORT': '5432',
     }
 }
 
