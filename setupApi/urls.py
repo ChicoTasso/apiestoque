@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import CategoriaListCreate, CategoriaRetrieveDestroy, ProdutoListCreate, ProdutoRetrieveDestroy, EntradaListCreate, EntradaRetrieveDestroy, SaidaListCreate, SaidaRetrieveDestroy
+from .views import CategoriaListCreate, CategoriaRetrieveDestroy, ProdutoListCreate, ProdutoRetrieveDestroy, EntradaListCreate, EntradaRetrieveDestroy, SaidaListCreate, SaidaRetrieveDestroy, home
 urlpatterns = [
+    path('', home, name='home'),
     path('categorias/', CategoriaListCreate.as_view(), name='categorias-list-create'),
     path('produtos/', ProdutoListCreate.as_view(), name='produtos-list-create'),
     path('entradas/', EntradaListCreate.as_view(), name='entrada-list-create'),

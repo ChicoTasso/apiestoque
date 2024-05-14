@@ -1,6 +1,7 @@
 from rest_framework import generics
 from .models import Categoria, Produto, Entrada, Saida
 from .serializer import CategoriaSerializer, ProdutoSerializer, EntradaSerializer, SaidaSerializer
+from django.shortcuts import render
 
 
 
@@ -37,4 +38,11 @@ class SaidaListCreate(generics.ListCreateAPIView):
 class SaidaRetrieveDestroy(generics.RetrieveDestroyAPIView):
     queryset = Saida.objects.all()
     serializer_class = SaidaSerializer
+
+def home(request):
+    template_name = 'home.html'
+    context = {
+
+    }
+    return render(request, template_name, context)
 
