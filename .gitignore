@@ -136,3 +136,15 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Pycharm
+.idea/
+*.iml
+__pycache__/
+*.pyc
+env/
+venv/
+*.log
+*.swp
+*.so
+*.pyd
